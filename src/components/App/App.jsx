@@ -8,6 +8,7 @@ class App extends React.Component {
     firstName: undefined,
     lastName: undefined,
     age: undefined,
+    creditCardType: undefined,
   }
 
   handleSubmit = (firstName, lastName, age) => {
@@ -18,14 +19,27 @@ class App extends React.Component {
     })
   }
 
+  handleCreditCardChange = (creditCardType) => {
+    this.setState({
+      creditCardType,
+    })
+  }
+
   render() {
-    const {firstName, lastName, age} = this.state
+    const {firstName, lastName, age, creditCardType} = this.state
+
+    console.log('(render) App')
 
     return (
       <div className="container">
         <header className="header" />
-        <Component1 onSubmit={this.handleSubmit} />
-        <Component2 firstName={firstName} lastName={lastName} age={age} />
+        <Component1 onSubmit={this.handleSubmit} onCreditCardChange={this.handleCreditCardChange} />
+        <Component2
+          firstName={firstName}
+          lastName={lastName}
+          age={age}
+          creditCardType={creditCardType}
+        />
       </div>
     )
   }
