@@ -1,18 +1,29 @@
+// @flow
+
 import React from 'react'
-import PropTypes from 'prop-types'
 import './Component1.css'
 import Component3 from '../Component3'
 
-const propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onCreditCardChange: PropTypes.func.isRequired,
-}
+type Props = {|
+  onSubmit: (v1: string, v2: string, v3: string) => void,
+  onCreditCardChange: (v1: string) => void,
+|}
 
-class Component1 extends React.Component {
-  state = {}
+type State = {|
+  firstName: string,
+  lastName: string,
+  age: string,
+|}
 
-  handleFieldChange = (e) => {
-    const {name, value} = e.target
+class Component1 extends React.Component<Props, State> {
+  state = {
+    firstName: '',
+    lastName: '',
+    age: '',
+  }
+
+  handleFieldChange = (e: SyntheticEvent<HTMLInputElement>) => {
+    const {name, value} = e.currentTarget
 
     this.setState({
       [name]: value,
@@ -48,7 +59,5 @@ class Component1 extends React.Component {
     )
   }
 }
-
-Component1.propTypes = propTypes
 
 export default Component1

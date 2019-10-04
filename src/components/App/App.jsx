@@ -1,9 +1,20 @@
+// @flow
+
 import React from 'react'
 import './App.css'
 import Component1 from '../Component1'
 import Component2 from '../Component2'
 
-class App extends React.Component {
+type Props = {}
+
+type State = {
+  firstName?: string,
+  lastName?: string,
+  age?: string,
+  creditCardType?: string,
+}
+
+class App extends React.Component<Props, State> {
   state = {
     firstName: undefined,
     lastName: undefined,
@@ -11,7 +22,7 @@ class App extends React.Component {
     creditCardType: undefined,
   }
 
-  handleSubmit = (firstName, lastName, age) => {
+  handleSubmit = (firstName: string, lastName: string, age: string) => {
     this.setState({
       firstName,
       lastName,
@@ -19,7 +30,7 @@ class App extends React.Component {
     })
   }
 
-  handleCreditCardChange = (creditCardType) => {
+  handleCreditCardChange = (creditCardType: string) => {
     this.setState({
       creditCardType,
     })
