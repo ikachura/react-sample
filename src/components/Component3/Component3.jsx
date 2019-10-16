@@ -29,7 +29,7 @@ class Component3 extends React.Component {
   render() {
     const {creditCardType} = this.state
 
-    console.log('(render) Component3')
+    console.log('(render) _______________3')
 
     return <div>{creditCardType}</div>
   }

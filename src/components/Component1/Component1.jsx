@@ -37,7 +37,7 @@ class Component1 extends React.Component<Props, State> {
   }
 
   render() {
-    console.log('(render) Component1')
+    console.log('(render) _______1')
 
     return (
       <>

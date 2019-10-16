@@ -68,7 +68,7 @@ class Component2 extends React.Component {
 
     const formattedName = `${firstName} ${lastName}`
 
-    console.log('(render) Component2')
+    console.log('(render) ___________2')
 
     return (
       <>

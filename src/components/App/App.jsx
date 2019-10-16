@@ -39,7 +39,7 @@ class App extends React.Component<Props, State> {
   render() {
     const {firstName, lastName, age, creditCardType} = this.state
 
-    console.log('(render) App')
+    console.log('(render) ___0')
 
     return (
       <div className="container">
