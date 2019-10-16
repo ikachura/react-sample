@@ -2,8 +2,9 @@
 
 import React from 'react'
 import './App.css'
-import Component1 from '../Component1'
-import Component2 from '../Component2'
+// import Component1 from '../Component1'
+// import Component2 from '../Component2'
+import Component4 from '../Component4'
 
 type Props = {}
 
@@ -37,20 +38,22 @@ class App extends React.Component<Props, State> {
   }
 
   render() {
-    const {firstName, lastName, age, creditCardType} = this.state
+    // const {firstName, lastName, age, creditCardType} = this.state
 
     console.log('(render) ___0')
 
     return (
       <div className="container">
         <header className="header" />
-        <Component1 onSubmit={this.handleSubmit} onCreditCardChange={this.handleCreditCardChange} />
-        <Component2
-          firstName={firstName}
-          lastName={lastName}
-          age={age}
-          creditCardType={creditCardType}
-        />
+        {/*<Component1 onSubmit={this.handleSubmit} onCreditCardChange={this.handleCreditCardChange} />*/}
+        {/*<Component2*/}
+        {/*  firstName={firstName}*/}
+        {/*  lastName={lastName}*/}
+        {/*  age={age}*/}
+        {/*  creditCardType={creditCardType}*/}
+        {/*/>*/}
+
+        <Component4 />
       </div>
     )
   }
