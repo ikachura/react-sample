@@ -4,7 +4,8 @@ import React from 'react'
 import './App.css'
 // import Component1 from '../Component1'
 // import Component2 from '../Component2'
-import Component4 from '../Component4'
+// import Component4 from '../Component4'
+import {Component5} from '../Component5'
 
 type Props = {}
 
@@ -53,7 +54,9 @@ class App extends React.Component<Props, State> {
         {/*  creditCardType={creditCardType}*/}
         {/*/>*/}
 
-        <Component4 />
+        {/*<Component4 />*/}
+
+        <Component5 />
       </div>
     )
   }
