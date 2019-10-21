@@ -6,8 +6,13 @@ import './App.css'
 // import Component2 from '../Component2'
 // import Component4 from '../Component4'
 import {Component5} from '../Component5'
+import {UserInfo} from '../UserInfo'
+import {connect} from 'react-redux'
+import {getUserById} from '../../actions/getUserById'
 
-type Props = {}
+type Props = {
+  getUserById: (id: string) => void,
+}
 
 type State = {
   firstName?: string,
@@ -22,6 +27,10 @@ class App extends React.Component<Props, State> {
     lastName: undefined,
     age: undefined,
     creditCardType: undefined,
+  }
+
+  componentDidMount(): void {
+    this.props.getUserById('1')
   }
 
   handleSubmit = (firstName: string, lastName: string, age: string) => {
@@ -46,6 +55,7 @@ class App extends React.Component<Props, State> {
     return (
       <div className="container">
         <header className="header" />
+        <UserInfo />
         {/*<Component1 onSubmit={this.handleSubmit} onCreditCardChange={this.handleCreditCardChange} />*/}
         {/*<Component2*/}
         {/*  firstName={firstName}*/}
@@ -62,4 +72,9 @@ class App extends React.Component<Props, State> {
   }
 }
 
-export default App
+const AppContainer = connect(
+  undefined,
+  {getUserById},
+)(App)
+
+export default AppContainer
