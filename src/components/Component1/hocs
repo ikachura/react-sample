@@ -1,0 +1,67 @@
+App.js
+
+fetchUsersHOC(
+    setStateHOC(
+        setHandlerFnHOC(
+            Component
+        )
+    )
+)
+
+const setHandlerFnHOC = (data) => WrappedComponent => {
+    class HandlerFN extends React.Component {
+        handleFieldChange = (e: SyntheticEvent<HTMLInputElement>) => {
+        }
+
+        render(
+            return <WrappedComponent>
+        )
+    }
+}
+
+const data = {a:1}
+setHandlerFnHOC(data)(Component)
+
+fetchUsersHOC(setStateHOC(setHandlerFnHOC()()))
+-- Compose --
+
+// const compose = (...fns) => x => fns.reduceRight((y, f) => f(y), x);
+
+compose(
+    fetchUsersHOC,
+    setStateHOC,
+    setHandlerFnHOC,
+)(Component)
+
+
+
+// ----------------
+
+import {withState, withStateHandlers, lifecycle} from 'recompose'
+
+compose(
+    flattenProp('product') // Props: product: {id, name, amount}
+    mapProps((props) => ({...})) // Props: ...
+
+    // Props: id, name, amount
+
+    addOne('amount'),
+    timerHOC(),
+
+    withState('users', 'setUsers', {firstName: ''}),
+
+    withStateHandlers({}, {
+        handleFieldChange: (props) => (e: HtmlEvent) => {
+            // Props {users, setUsers},
+
+            props.setUsers(e....);
+        }
+    }),
+
+    lifecycle({
+        componentDidMount: (props) => {
+            // Props {users, setUsers, handleFieldChange},
+            props.fetchUsers()
+        }
+    })
+)(Component)
